@@ -1,5 +1,6 @@
 @import "variables.scss";
 @import "mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
 body {
 	font-size: 20px;
@@ -21,13 +22,15 @@ h4,
 h5,
 h6 {
 	font-weight: 800;
+	font-family: 'Permanent Marker', cursive;
 }
 
 a {
 	color: $gray-dark;
+	@include transition-all;
 	&:hover,
 	&:focus {
-		color: $brand-primary;
+		color: $green;
 	}
 }
 
@@ -79,7 +82,7 @@ hr.small {
 			padding: 20px;
 			&:hover,
 			&:focus {
-				color: $white-faded;
+				color: $green;
 			}
 		}
 		.nav {
@@ -89,7 +92,7 @@ hr.small {
 					padding: 20px;
 					&:hover,
 					&:focus {
-						color: $white-faded;
+						color: $green;
 					}
 				}
 			}
@@ -120,7 +123,7 @@ hr.small {
 				color: $gray-dark;
 				&:hover,
 				&:focus {
-					color: $brand-primary;
+					color: $green;
 				}
 			}
 			.nav {
@@ -129,7 +132,7 @@ hr.small {
 						color: $gray-dark;
 						&:hover,
 						&:focus {
-							color: $brand-primary;
+							color: $green;
 						}
 					}
 				}
@@ -150,8 +153,12 @@ hr.small {
 
 .intro-header {
 	background-color: $gray; 
-	background: no-repeat center center; 
-	background-attachment: scroll;
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	padding: 116px 0;
+	
 	// NOTE: Background images are set within the HTML using inline CSS!
 	margin-bottom: 50px;
 	.site-heading,
@@ -215,7 +222,7 @@ hr.small {
 			}
 		}
 	}
-}
+} 
 
 // Post Preview Pages
 
@@ -225,7 +232,7 @@ hr.small {
 		&:hover,
 		&:focus {
 			text-decoration: none;
-			color: $brand-primary;
+			color: $green;
 		}
 		> .post-title {
 			font-size: 30px;
@@ -248,7 +255,7 @@ hr.small {
 			color: $gray-dark;
 			&:hover,
 			&:focus {
-				color: $brand-primary;
+				color: $green;
 				text-decoration: underline;
 			}
 		}
@@ -260,6 +267,10 @@ hr.small {
 			}
 		}
 	}
+	@media only screen and (max-width: 768px) { 
+		text-align:center;
+	}
+		
 }
 
 // Sections
@@ -373,8 +384,8 @@ form .row:first-child .floating-label-form-group {
 .btn-default {
 	&:hover,
 	&:focus {
-		background-color: $brand-primary;
-		border: 1px solid $brand-primary;
+		background-color: $green;
+		border: 1px solid $green;
 		color: white;
 	}
 }
@@ -400,8 +411,8 @@ form .row:first-child .floating-label-form-group {
 		> a:hover,
 		> a:focus {
 			color: white;
-			background-color: $brand-primary;
-			border: 1px solid $brand-primary;
+			background-color: $green;
+			border: 1px solid $green;
 		}
 	}
 
@@ -411,7 +422,7 @@ form .row:first-child .floating-label-form-group {
 		> a:focus,
 		> span {
 			color: $gray;
-			background-color: $gray-dark;
+			background-color: $green;
 			cursor: not-allowed;
 		}
 	}
@@ -443,4 +454,8 @@ img::-moz-selection {
 
 body {
 	webkit-tap-highlight-color: $brand-primary;
+}
+
+.footer-social-holder p {
+	display:inline-block;
 }
